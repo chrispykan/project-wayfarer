@@ -3,6 +3,8 @@ var app = express();
 app.use(express.static('public'));
 var bodyParser = require('body-parser');
 app.use(bodyParser.json());
+// var controllers = require(./controllers);
+
 
 app.get('/', function(req, res){
 	res.send('Server Working...');

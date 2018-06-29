@@ -1,14 +1,13 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
 class Cities extends Component{
-
     render(){
         return(
             <div>
                 <Header/>
                 <aside className="cityList">
                     <h3>Cities</h3>
-                    <a><London</a>
+                    <a>London </a>
                     <a>Sydney</a>
                     <a>San Francisco</a>
                     <a>Seattle</a>
@@ -19,10 +18,16 @@ class Cities extends Component{
                             <h1>London</h1>
                             <h3>United Kingdom</h3>
                         </div>
+
                         <div className="cityImg">
                             <img alt="cityImg" src=""/>
                         </div>
+
                         <div className="postList row">
+
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#postModal">
+                         Create a New Post
+                        </button>
                             <h1>Posts</h1>
                             <img alt="postImg" src=""/>
                             <h3>Title</h3>
@@ -37,7 +42,7 @@ class Cities extends Component{
 
 }
 
-
+export default Cities;
 
 
 
