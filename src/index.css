@@ -7,3 +7,6 @@ body {
   text-align: center;
   padding: 0.5em 0;
 }
+.cityInfo{
+  display: block;
+}
