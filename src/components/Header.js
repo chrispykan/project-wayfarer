@@ -16,7 +16,7 @@ class Header extends Component {
               Log In
             </button>
 
-            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+           {/* <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
               <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                   <div class="modal-header">
@@ -39,12 +39,13 @@ class Header extends Component {
                     </form>
                   </div>
                   <div class="modal-footer">
-                    {/* Form login button */}
+                  
+                  
                     <button type="button" class="btn btn-primary">Log In</button>
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
           </nav>
         </div>
       )
