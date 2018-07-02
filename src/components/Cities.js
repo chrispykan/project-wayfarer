@@ -39,9 +39,8 @@ class Cities extends Component{
                                 <h3>United Kingdom</h3>
                                 <img className="cityImg" alt="cityImg" src="/images/london.jpg"/>
                             </div>
-
-                        
                         </div>
+                        
                         <button className="btn btn-info create" data-toggle="modal" data-target="#postModal">
                         Create a New Post
                         </button>
