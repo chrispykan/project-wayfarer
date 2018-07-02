@@ -39,13 +39,8 @@ class Cities extends Component{
                             <div className="col-4">
                                 <h1>London</h1>
                                 <h3>United Kingdom</h3>
+                                <img className="cityImg" alt="cityImg" src="/images/london.jpg"/>
                             </div>
-                          <div className="col-3 cityImg">
-                              <img alt="cityImg" src="images/london.jpg" width="450" height="250"/>
-                          </div>
-                        </div>
-
-
                         <h1>Posts</h1>
                         <div className="postList row">
 

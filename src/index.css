@@ -91,6 +91,11 @@ aside h3{
     margin-top: 10px;
 }
 
+
+.cityImg img{
+  height: 250px;
+  width: 450px;
+}
 .postComments p {
   box-sizing: border-box;
   width: 400px;
@@ -98,3 +103,4 @@ aside h3{
   border: gray;
   border-style: solid;
   border-radius: 10%;
+}
