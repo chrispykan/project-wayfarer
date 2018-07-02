@@ -24,3 +24,8 @@ body {
   height: 80px;
   width: 80px;
 }
+
+.cityImg img{
+  height: 250px;
+  width: 450px;
+}

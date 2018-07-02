@@ -37,11 +37,10 @@ class Cities extends Component{
                             <div className="col-3">
                                 <h1>London</h1>
                                 <h3>United Kingdom</h3>
+                                <img className="cityImg" alt="cityImg" src="/images/london.jpg"/>
                             </div>
 
-                        <div className="col-3 cityImg">
-                            <img alt="cityImg" src=""/>
-                        </div>
+                        
                         </div>
                         <button className="btn btn-info create" data-toggle="modal" data-target="#postModal">
                         Create a New Post
