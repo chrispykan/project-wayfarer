@@ -5,6 +5,7 @@ const requireAuth = passport.authenticate('jwt', {session: false});
 const requireSignIn = passport.authenticate('local', {session: false});
 const postsController = require('./controllers/posts');
 const citiesController = require('./controllers/cities');
+const usersController = require('./controllers/users');
 
 module.exports = function (app) {
   app.get('/', requireAuth, function (req, res) {
@@ -29,7 +30,16 @@ module.exports = function (app) {
   //show one specific post
   app.delete('/cities/:id/posts/:post_id', postsController.destroy);
 
-  app.get('/users', )
+  //show all users
+  app.get('/users', usersController.index);
+  //show one user
+  app.get('/users/:user_id', usersController.show);
+  //update a user
+  app.put('/users/:user_id', usersController.update);
+  //delete a user
+  app.delete('/users/:user_id', usersController.destroy)
+
+
 
 
 }
