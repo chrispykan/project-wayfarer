@@ -5,11 +5,11 @@ import React, { Component } from 'react'
 class Header extends Component {
     render() {
       return (
-        <div>
-          <nav className="navbar navbar-light bg-light">
+        <div className="headerStyle">
+          <nav className="navbar navbar-light navColor">
           <a className="navbar-brand" href="#">
           <img src="/docs/4.1/assets/brand/bootstrap-solid.svg" width="30" height="30" className="d-inline-block align-top" alt=""/>
-            Wayfarer
+            <h3>Wayfarer</h3>
           </a>
           </nav>
         </div>
