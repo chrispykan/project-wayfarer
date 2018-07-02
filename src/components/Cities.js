@@ -67,8 +67,3 @@ class Cities extends Component{
 }
 
 export default Cities;
-
-
-
-
-//li border: black solid 1px; border-radius: 4px;
