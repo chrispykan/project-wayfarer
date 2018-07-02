@@ -1,4 +1,3 @@
-
 const express = require('express');
 const http = require('http');
 const bodyparser = require('body-parser');
@@ -7,6 +6,7 @@ const app = express();
 const router = require('./router')
 const mongoose = require('mongoose')
 const cors = require('cors')
+
 
 mongoose.connect('mongodb://localhost/auth')
 
