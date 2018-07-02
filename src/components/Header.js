@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-
+import { Link } from 'react-router-dom';
+import LoginForm from './LoginForm'
 
 
 class Header extends Component {
@@ -13,8 +14,9 @@ class Header extends Component {
           </a>
           </nav>
         </div>
-              )
-            }
-        }
+      )
+   }
+}
 
 export default Header
+

@@ -5,6 +5,7 @@ class Cities extends Component{
     render(){
         return(
 
+
               <div className="container cityPage">
               <div className="row cityRow">
                 <div className="col-5">
@@ -31,6 +32,7 @@ class Cities extends Component{
                     </div>
                 </aside>
                     </div>
+
                     <div className="col-7">
                     <section>
                         <div className="row cityInfo">
@@ -42,6 +44,7 @@ class Cities extends Component{
                               <img alt="cityImg" src="images/london.jpg" width="450" height="250"/>
                           </div>
                         </div>
+
 
                         <h1>Posts</h1>
                         <div className="postList row">
@@ -67,8 +70,3 @@ class Cities extends Component{
 }
 
 export default Cities;
-
-
-
-
-//li border: black solid 1px; border-radius: 4px;
