@@ -21,8 +21,9 @@ class SignupForm extends Component {
 
 render(){
   return(
-   <Home />
-    <div className="static-modal">
+    <div>
+        <Home />
+        <div className="static-modal">
                 <Modal.Dialog>
                     <Modal.Header>
                     <Modal.Title>Sign Up</Modal.Title>
@@ -84,7 +85,7 @@ render(){
                     </Modal.Footer>
                 </Modal.Dialog>
             </div>
-
+        </div>
   )
 }
 

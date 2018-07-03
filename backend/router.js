@@ -14,14 +14,16 @@ module.exports = function (app) {
   app.post('/signup', Authentication.signup);
   app.post('/signin', requireSignIn, Authentication.signin);
 
-  //list or show all posts
-  app.get('/cities', postsController.index);
-
+  //create all cities
+  app.post('/cities', citiesController.create);
   //list or show all cities
   app.get('/cities', citiesController.index);
-  //show all posts for one city
-  app.get('/cities/:id/posts', citiesController.show);
-   //create a new post
+  //show one city
+  app.get('/cities/:id', citiesController.show);
+     
+  app.get('/posts', postsController.index);
+  //create a new post
+  app.get('/cities/:id/posts',postsController.postsForCity);
   app.post('/cities/:id/posts', postsController.create);
   //show one specific post
   app.get('/cities/:id/posts/:post_id', postsController.show);
@@ -37,10 +39,7 @@ module.exports = function (app) {
   //update a user
   app.put('/users/:user_id', usersController.update);
   //delete a user
-  app.delete('/users/:user_id', usersController.destroy)
-
-
-
+  app.delete('/users/:user_id', usersController.destroy);
 
 }
 

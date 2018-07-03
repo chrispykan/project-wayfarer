@@ -7,9 +7,9 @@ const CitySchema = new Schema ({
     country: String,
     photo: String,
     posts: {
-		type: Schema.Types.ObjectId,
-		ref: 'Post'
-	}
+		  type: Schema.Types.ObjectId,
+		  ref: 'Post'
+	  }
 })
 
 const City = mongoose.model('City', CitySchema);

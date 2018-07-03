@@ -37,6 +37,8 @@ function update(req, res){
 		if (err) {
             console.log(err);
         } else {
+			foundPost.city_id = req.body.city_id;
+			foundPost.user_id = req.body.user_id;
 			foundPost.title = req.body.title;
 			foundPost.review = req.body.review;
 			foundPost.post_photo = req.body.post_photo;
@@ -56,10 +58,23 @@ function destroy(req, res){
 	});
 }
 
+
+//show all posts for a specific city
+function postsForCity(req,res){
+    console.log('GET city and its posts');
+    Post.find({city_id: req.params.id},function (err, cityPosts){
+        if(err){
+            res.send(err);
+        }
+        return res.json(cityPosts);
+    });
+}
+
 module.exports = {
     index: index,
     create: create,
     show: show,
     update: update,
-    destroy: destroy
+	destroy: destroy,
+	postsForCity: postsForCity
 }

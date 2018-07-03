@@ -10,6 +10,19 @@ function index(req, res){
     });
 }
 
+function create(req, res){
+    console.log('POST for Cities')
+	City.create(req.body, function(err, newCity){
+		if(err){
+			res.send(err);
+		}else{
+			
+			newCity.save();
+			res.json(newCity);	
+		}
+	});
+}
+
 function show(req,res){
     console.log('GET one city')
     City.findById(req.params.id, function(err, foundCity){
@@ -20,7 +33,10 @@ function show(req,res){
     });
 }
 
+
+
 module.exports = {
     index: index,
-    show: show
+    show: show,
+    create: create,
 }
