@@ -21,7 +21,7 @@ class SignupForm extends Component {
 
 render(){
   return(
-   <Home />
+   <Home />,
     <div className="static-modal">
                 <Modal.Dialog>
                     <Modal.Header>
