@@ -1,5 +1,7 @@
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/project-wayfarer');
+
+mongoose.connect('mongodb://localhost/3090');
+
 
 var CityModel = require('./City');
 var PostModel = require('./Post');
