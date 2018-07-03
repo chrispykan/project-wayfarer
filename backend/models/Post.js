@@ -4,6 +4,7 @@ const Schema = mongoose.Schema;
 const User = require('./User' );
 
 const PostSchema = new Schema ({
+	city_id: String,
     title: String,
     review: String,
     post_photo: String,

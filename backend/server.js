@@ -1,4 +1,3 @@
-
 const express = require('express');
 const http = require('http');
 const bodyparser = require('body-parser');
@@ -8,9 +7,10 @@ const router = require('./router')
 const mongoose = require('mongoose')
 const cors = require('cors')
 
+
 mongoose.connect('mongodb://localhost/auth')
 
-app.use(morgan('combined'));
+// app.use(morgan('combined'));
 app.use(cors());
 app.use(bodyparser.json({type: '*/*'}))
 

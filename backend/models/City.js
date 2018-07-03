@@ -8,7 +8,7 @@ const CitySchema = new Schema ({
     photo: String,
     posts: {
 		type: Schema.Types.ObjectId,
-		ref: 'Posts'
+		ref: 'Post'
 	}
 })
 
