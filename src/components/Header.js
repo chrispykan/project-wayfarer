@@ -8,10 +8,8 @@ class Header extends Component {
       return (
         <div className="headerStyle">
           <nav className="navbar navbar-light navColor">
-          <a className="navbar-brand" href="#">
-          <img src="/docs/4.1/assets/brand/bootstrap-solid.svg" width="30" height="30" className="d-inline-block align-top" alt=""/>
-            <h3>Wayfarer</h3>
-          </a>
+            <img src="" alt=""/>
+            <a href="#"> <h3 className="headerTitle">Wayfarer</h3> </a>
           </nav>
         </div>
       )
@@ -19,4 +17,3 @@ class Header extends Component {
 }
 
 export default Header
-
