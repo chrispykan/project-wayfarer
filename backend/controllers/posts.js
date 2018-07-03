@@ -17,14 +17,9 @@ function create(req, res){
 		if(err){
 			res.send(err);
 		}else{
-		// 	User.findById(req.params.user_id, function(err, userSuccess) {
-		// 		if (err) console.log(err);
-		// 		else {
-		// 			newPost.user_id = req.params.user_id;
-		// 			newPost.save();
-		// 			res.json(newPost);
-		// 		}
-		// 	});
+			newPost.user_id = req.User.user_id;
+			newPost.save();
+			res.json(newPost);	
 		}
 	});
 }

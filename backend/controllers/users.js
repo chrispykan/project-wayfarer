@@ -42,7 +42,7 @@ function destroy(req, res){
         if (err){
             console.log(err);
         }
-		res.send("review deleted");
+		res.send("User deleted");
 	});
   
 }
