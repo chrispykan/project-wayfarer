@@ -1,3 +1,4 @@
+
 var User = require('../models/User');
 
 function index(req, res){
@@ -26,11 +27,11 @@ function update(req, res){
         if(err){
             res.send(err);
         }else{
-            updatedUser.name = req.body.name;
-			updatedUser.email = req.body.email;
-            updatedUser.password = req.body.password;
-            updatedUser.current_city = req.body.current_city;
-            res.json(updatedUser);
+          updatedUser.name = req.body.name;
+			    updatedUser.email = req.body.email;
+          updatedUser.password = req.body.password;
+          updatedUser.current_city = req.body.current_city;
+          res.json(updatedUser);
          }
     });
    
