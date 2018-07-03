@@ -2,28 +2,35 @@ body {
     margin: 0%;
     padding: 0;
     font-family: sans-serif;
+    color: #01579B;
 }
 
 .navColor {
     background-color: #81D4FA;
     height: 60px;
-    color: pink;
+    justify-content: left;
+    box-shadow: 2px 2px 2px rgba(40, 155, 200, 0.7);
+    border-radius: 0;
 }
 
 .headerStyle h3 {
-    padding-bottom: 10%;
-    padding-left: 40%;
-    color: #424242;
+    font-size: 3em;
+    color: #01579B;
+}
+
+.headerTitle {
+    text-align: left;
 }
 
 .home h3{
-    text-align: center;
+    /* text-align: center; */
     padding: 0.5em 0;
 }
 
 .cityPage {
-    margin: 0%;
+    margin: auto;
     padding: 10;
+    max-width: 100%;
 }
 
 .cityRow {
@@ -39,25 +46,41 @@ body {
 aside{
   /* background-color: #81D4FA; */
   height: 100%;
+  border: #000000 solid 1px;
+  border-radius: 10px;
 }
 
-aside h3{
-    margin-left: 30px;
+aside h3 {
+    font-size: 25px;
+    margin-left: 20px;
+    margin-top: 20px;
 }
+
+ aside a .cityNameLink {
+    text-decoration: none;
+}
+.cityList:hover{
+  background-image: url("/images/london.jpg");
+  background-size: cover;
+  color: white;
+
+}
+.asideCityName {
+    margin-left: 20px;
+    font-size: 25px;
+
+    color: #01579B;
+}
+
 .cityList {
     display: block;
-    width: 300px;
-    height: 100px;
-    border: gray solid 2px;
+    width: 500px;
+    height: 120px;
+    border: #80D8FF solid 1px;
     border-radius: 10px;
     margin-top: 10px;
     margin-bottom: 10px;
     margin-left: 20px;
-}
-
-.cityList h3 {
-    padding-left: 15%;
-    color: #424242;
 }
 
 .cityList img {
@@ -71,36 +94,102 @@ aside h3{
 .cityList a {
     color: #757575;
     font-size: 25px;
+    margin-left: 8px;
+    margin-top: 20px;
 }
 
 .cityInfo{
-  display: block;
+    /* border: gray solid 1px; */
+    border-radius: 10px;
 }
+
+.cityInfo h1{
+    margin-top: 15px;
+}
+
+.cityInfo h1 h3{
+  display: block;
+  float: left;
+}
+
+.main-container {
+  border: 1px #000000 solid;
+  border-radius: 10px;
+  height: 100%;
+}
+
+.cityCountryInfo {
+    width: auto%;
+    display: inline;
+    margin-left: 3em;
+}
+
 
 .cityImg {
     align: right;
+    border-radius: 10px;
+    margin: 2em;
+    margin-bottom: .5em;
+    width: 65%;
+    height: 47%;
 }
 
 .plusButton {
-    border-radius: 10px;
-    margin-top: 10px;
-    margin-right: 10px;
+    align: right;
+    border-radius: 100%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    height: 40px;
+    width: 40px;
+    border-color: #81D4FA;
+    background-color: #81D4FA;
+    font-size: 20px;
+}
+
+.plusButton:hover {
+    background-color: #FFEB3B;
+    border-color: #FFEB3B;
 }
 
 .postList h1 {
     margin-top: 10px;
 }
 
+.commentImg {
+    height: 80px;
+    width: 80px;
+    border-radius: 10px;
+    margin: 10px;
+}
 
-.cityImg img{
-  height: 250px;
-  width: 450px;
+.postComments {
+    display: flex;
+    width: 90%;
+    margin: 0 auto;
+    flex-direction: row;
+    border: #80D8FF solid 1px;
+    border-radius: 10px;
 }
+
+.postAndButton {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+}
+
+.postsTitle {
+    margin-left: 1.5em;
+    margin-top: 1em;
+}
+
+.postCommentDetail h3, p {
+    width: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
 .postComments p {
-  box-sizing: border-box;
-  width: 400px;
-  height: 100px;
-  border: gray;
-  border-style: solid;
-  border-radius: 10%;
+  width: 90%;
+  height: auto;
 }
+
