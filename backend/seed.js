@@ -1,8 +1,8 @@
-var City = require('../models/City');
-var User = require('../models/User');
-var Post = require('../models/Post');
+console.log ('seeds work!') 
 
-var citiesList=[{
+var db = require('./models/index.js');
+
+var citiesList = [{
     city_name: "San Francisco",
     country: "USA",
     photo: "../../public/images/sanFran.jpg",
@@ -26,9 +26,9 @@ var citiesList=[{
     photo: "../../public/images/Sydney.jpg",
     posts: []
 }
-]
+];
 
-var posts=[{
+var postsList = [{
     title: 'Sad Sad Seattle',
     review: 'All the rain in Seattle makes it a depressing gray place. But there are lots of good restaurants and cool things to see.',
     post_photo: "../images/seattle.jpg",
@@ -41,9 +41,9 @@ var posts=[{
     post_photo: "../images/ferryBuilding.jpg",
     user_id: null,
     city_id: null,
-}]
+}];
 
-var users=[{name: "Riki", email:"Riki@ga.co", password: "1234", current_city: "El Cerrito, CA"}];
+// var users=[{name: "Riki", email:"Riki@ga.co", password: "1234", current_city: "El Cerrito, CA"}];
 
 // User.remove({}, function(err, removedUsers){
 //     User.create(users, function(err, createdUsers){
@@ -58,15 +58,30 @@ var users=[{name: "Riki", email:"Riki@ga.co", password: "1234", current_city: "E
 //         });
 
 //     });
-// });
+// }); 
 
-City.remove({}, function(err, res){
-    if (err) {
-      console.log('Error removing cities', err)
-      return;
-    }
-    console.log('Removed all cities');
+db.Post.remove({}, function(err, posts) {
+  if (err) {
+    console.log("Error occured in remove", err);
+  } else {
+    console.log("removed all posts");
 
-       
-  
+
+    db.Post.create(postsList, function(err, posts){
+      if (err) {
+        return console.log("error!", err);
+      }
+      console.log('created', posts.length, 'posts');
+      process.exit(); 
+    });
+  }
 });
+
+// db.City.remove({}, function(err, cities){
+//     if (err) {
+//       console.log('Error removing cities', err);
+//     } else {
+//       console.log("removed all cities");
+//      process.exit();       
+  
+// });
