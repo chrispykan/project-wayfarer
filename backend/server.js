@@ -1,17 +1,21 @@
-var express = require('express');
-var app = express();
-app.use(express.static('public'));
-var bodyParser = require('body-parser');
-app.use(bodyParser.json());
-// var controllers = require(./controllers);
+const express = require('express');
+const http = require('http');
+const bodyparser = require('body-parser');
+const morgan = require('morgan');
+const app = express();
+const router = require('./router')
+const mongoose = require('mongoose')
+const cors = require('cors')
 
 
-app.get('/', function(req, res){
-	res.send('Server Working...');
-});
+mongoose.connect('mongodb://localhost/auth')
 
+// app.use(morgan('combined'));
+app.use(cors());
+app.use(bodyparser.json({type: '*/*'}))
 
-let port = process.env.PORT || 3001;
-app.listen(port, function() {
-    console.log(`Listening on port ${ port }`);
-});
+router(app);
+const port = process.env.PORT || 3090;
+const server = http.createServer(app);
+server.listen(port);
+console.log('Server listening on:', port);

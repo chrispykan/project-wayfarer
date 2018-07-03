@@ -50,6 +50,9 @@ class Cities extends Component{
                               {/* </div> */}
                         </div>
 
+ 
+                        <h1>Posts</h1>
+
                         <div className="postList row">
 
                           <section className="postAndButton">
