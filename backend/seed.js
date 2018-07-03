@@ -60,33 +60,9 @@ db.User.remove({}, function(err, removedUsers){
         db.Post.remove({}, function(err, removedPosts) {
             db.Post.create(postsList, function (err, createdPosts) {
             console.log('You created posts!', createdPosts);
-            process.exit();
+                process.exit();
             });
         });
     });
 }); 
-// db.City.remove({}, function(err, removedCities) {
-//     db.City.create(citiesList, function (err, createdCities) {
-//         console.log('You created cities!', createdCities);
-//         process.exit();
-//     });
-// });
 
-
-
-// db.Post.remove({}, function(err, posts) {
-//   if (err) {
-//     console.log("Error occured in remove", err);
-//   } else {
-//     console.log("removed all posts");
-
-
-//     db.Post.create(postsList, function(err, posts){
-//       if (err) {
-//         return console.log("error!", err);
-//       }
-//       console.log('created', posts.length, 'posts');
-//       process.exit(); 
-//     });
-//   }
-// });

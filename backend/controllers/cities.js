@@ -38,5 +38,5 @@ function show(req,res){
 module.exports = {
     index: index,
     show: show,
-    create: create,
+    create: create
 }
