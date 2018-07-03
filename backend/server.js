@@ -1,10 +1,14 @@
 const express = require('express');
-const http = require('http');
-const bodyparser = require('body-parser');
-const morgan = require('morgan');
-const app = express();
-const router = require('./router')
 const mongoose = require('mongoose')
+const bodyparser = require('body-parser');
+const http = require('http');
+const db =  require('./models');
+const app = express();
+const router = require('./router');
+const morgan = require('morgan');
+
+
+
 const cors = require('cors')
 
 

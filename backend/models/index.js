@@ -1,7 +1,13 @@
 var mongoose = require('mongoose');
 
-mongoose.connect(process.env.MONGODB_URI||"mongodb://localhost/3090");
+mongoose.connect('mongodb://localhost/27017');
 
-module.exports.Post = require('./post.js');
-module.exports.User = require('./user.js');
-module.exports.City = require('./city.js');
+var CityModel = require('./City');
+var PostModel = require('./Post');
+var UserModel = require('./User');
+
+  module.exports = {
+    City: CityModel,
+    Post: PostModel,
+    User: UserModel
+    
