@@ -100,7 +100,6 @@ render(){
                     <Button> <Link to="/" className="navbar-brand">Close</Link></Button>
                     </Modal.Footer>
                 </Modal.Dialog>
- s
     </div>
 
   )
@@ -130,5 +129,6 @@ const validate = values => {
 }
 
 export default reduxForm({
+  form: 'signup',
   validate
 }) (SignupForm)
