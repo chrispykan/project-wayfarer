@@ -1,26 +1,49 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux'
 import { Link } from 'react-router-dom';
 
 
 class Header extends Component {
-    render() {
-      return (
-        <div className="headerStyle">
-         <nav className="navbar navbar-light navColor">
-           <img src="" alt=""/>
-           <a href="#"> <h3 className="headerTitle">Wayfarer</h3> </a>
-
-
-            <div className="login-signup">
-            <a  className="login-btn" href="/login">Log In</a>
-            <a  className="signup-btn" href="/signup">Sign Up</a>
-            </div>
-          </nav>
-
-
-        </div>
-      )
-   }
+    
+  renderLinks() {
+    if (this.props.authenticated) {
+      return [
+        <li key={1} className="nav-item">
+          <Link className="nav-link" to="/signout">Sign Out</Link>
+        </li>
+      ]
+    } else {
+      return [
+        <li key={1} className="nav-item">
+          <Link className="nav-link" to="/signin">Sign In</Link>
+        </li>,
+        <li key={2} className="nav-item">
+          <Link className="nav-link" to="/signup">Sign Up</Link>
+        </li>
+      ]
+    }
+  }
+  
+   
+  render() {
+    return (
+      <div className="headerStyle">
+       <nav className="navbar navbar-light navColor">
+         <img src="" alt=""/>
+         <Link to="/" className="headerTitle">Wayfarer</Link>
+         <ul className="nav navbar-nav">
+            {this.renderLinks()}
+          </ul>
+        </nav>
+      </div>
+    )
+  }
 }
 
-export default Header
+function mapStateToProps(state) {
+  return {
+    authenticated: state.auth.authenticated
+  }
+}
+
+export default connect(mapStateToProps,)(Header)

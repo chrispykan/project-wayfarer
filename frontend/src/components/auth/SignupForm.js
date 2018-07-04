@@ -1,67 +1,84 @@
 import React, { Component } from 'react'
 import {Form, Button, FormGroup, FormControl,Col,ControlLabel, Checkbox, Modal } from 'react-bootstrap/lib';
-import Home from '../Home'
+import { reduxForm, Field} from 'redux-form'
+import { renderTextField } from './form_helpers'
+import { Link } from 'react-router-dom'
+
 class SignupForm extends Component {
-
-
   constructor(props, context) {
     super(props, context);
 
-    this.handleHide = this.handleHide.bind(this);
+    this.handleShow = this.handleShow.bind(this);
+    this.handleClose = this.handleClose.bind(this);
 
     this.state = {
       show: false
     };
   }
 
-  handleHide() {
+  handleClose() {
     this.setState({ show: false });
   }
 
+  handleShow() {
+    this.setState({ show: true });
+  }
+
+
+  renderAlert() {
+    if (this.props.errorMessage) {
+      return <div className="alert alert-danger">
+        <strong>Oops: </strong>{this.props.errorMessage}
+      </div>
+    }
+  }
+
+
 
 render(){
+  const {handleSubmit} = this.props
   return(
-
     <div className="static-modal">
-                <Modal.Dialog>
-                    <Modal.Header>
-                    <Modal.Title>Sign Up</Modal.Title>
+     {this.renderAlert()}
+    <Modal.Dialog show={this.state.show} onHide={this.handleClose}>
+          <Modal.Header>
+                    <Modal.Title >Sign Up</Modal.Title>
                     </Modal.Header>
 
                     <Modal.Body>
-                    <Form horizontal>
+                    <Form horizontal onSubmit={handleSubmit}>
                     <FormGroup controlId="formHorizontalText">
                             <Col componentClass={ControlLabel} sm={2}>
-                            Email
+                            Name:
                             </Col>
                             <Col sm={10}>
-                            <FormControl type="text" placeholder="Name" />
+                            <FormControl type="text" />
                             </Col>
                         </FormGroup>
                         <FormGroup controlId="formHorizontalEmail">
                             <Col componentClass={ControlLabel} sm={2}>
-                            Email
+                            Email:
                             </Col>
                             <Col sm={10}>
-                            <FormControl type="email" placeholder="Email" />
+                            <FormControl type="text"  component={renderTextField} />
                             </Col>
                         </FormGroup>
 
                         <FormGroup controlId="formHorizontalPassword">
                             <Col componentClass={ControlLabel} sm={2}>
-                            Password
+                            Password:
                             </Col>
                             <Col sm={10}>
-                            <FormControl type="password" placeholder="Password" />
+                            <FormControl type="password"  component={renderTextField} />
                             </Col>
                         </FormGroup>
 
                         <FormGroup controlId="formHorizontalPassword">
                             <Col componentClass={ControlLabel} sm={2}>
-                            Password Confirm
+                            Confirm Password: 
                             </Col>
                             <Col sm={10}>
-                            <FormControl type="password" placeholder="Re-type Password" />
+                            <FormControl type="password"  component={renderTextField} />
                             </Col>
                         </FormGroup>
 
@@ -80,14 +97,38 @@ render(){
                     </Modal.Body>
 
                     <Modal.Footer>
-                    <Button>Close</Button>
+                    <Button> <Link to="/" className="navbar-brand">Close</Link></Button>
                     </Modal.Footer>
                 </Modal.Dialog>
-            </div>
-        </div>
+    </div>
+
   )
 }
-
 }
 
-export default SignupForm
+const validate = values => {
+  const errors = {}
+
+  if (values.password !== values.passwordConfirmation) {
+    errors.password = 'Passwords must match'
+  }
+
+  if (!values.email) {
+    errors.email = 'Please enter an email'
+  }
+
+  if (!values.password) {
+    errors.password = 'Please enter a password'
+  }
+
+  if (!values.passwordConfirmation) {
+    errors.passwordConfirmation = 'Please confirm your password'
+  }
+
+  return errors
+}
+
+export default reduxForm({
+  form: 'signup',
+  validate
+}) (SignupForm)
