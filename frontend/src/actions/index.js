@@ -1,5 +1,6 @@
 import axios from 'axios'
 import { UNAUTH_USER, AUTH_USER, AUTH_ERROR, FETCH_MESSAGE } from './types'
+
 const ROOT_URL = 'http://localhost:3090'
 
 export function signinUser({email, password}) {
@@ -41,7 +42,8 @@ export function signupUser({email, password, passwordConfirmation}) {
         localStorage.setItem('token', response.data.token)
       })
       .catch(({response}) => {
-        dispatch(authError(response.data.error))
+        console.log(response)
+        dispatch(authError(response))
       })
   }
 }

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Form, Button, FormGroup,Col,ControlLabel, Checkbox, Modal } from 'react-bootstrap/lib';
+import {Form, Button, FormGroup, FormControl, Col,ControlLabel, Checkbox, Modal } from 'react-bootstrap/lib';
 import { reduxForm, Field } from 'redux-form'
 import { renderTextField } from './form_helpers'
 import { Link } from 'react-router-dom'
@@ -58,11 +58,7 @@ constructor(props, context) {
       Username
     </Col>
     <Col sm={10}>
-    <Field
-            label="Username"
-            name="email"
-            component={renderTextField}
-            type="text"/>
+    <FormControl type="text"  component={renderTextField} />
     </Col>
   </FormGroup>
 
@@ -71,11 +67,7 @@ constructor(props, context) {
       Password
     </Col>
     <Col sm={10}>
-    <Field
-            label="Password"
-            name="password"
-            component={renderTextField}
-            type="password"/>
+    <FormControl type="password"  component={renderTextField} />
     </Col>
   </FormGroup>
 

@@ -60,7 +60,7 @@ render(){
                             Email:
                             </Col>
                             <Col sm={10}>
-                            <FormControl type="text"  component={renderTextField} />
+                            <FormControl type="email"  component={renderTextField} />
                             </Col>
                         </FormGroup>
 
@@ -93,7 +93,7 @@ render(){
                             <Button type="submit">Sign Up</Button>
                             </Col>
                         </FormGroup>
-                        </Form>;
+                        </Form>
                     </Modal.Body>
 
                     <Modal.Footer>

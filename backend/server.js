@@ -12,7 +12,7 @@ const morgan = require('morgan');
 const cors = require('cors')
 
 
-mongoose.connect('mongodb://localhost/auth')
+// mongoose.connect('mongodb://localhost/auth')
 
 // app.use(morgan('combined'));
 app.use(cors());
